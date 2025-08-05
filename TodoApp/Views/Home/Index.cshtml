@@ -1,0 +1,51 @@
+﻿@{
+    // ページタイトルを設定
+    ViewData["Title"] = "TODOリスト管理";
+}
+
+<!-- ヘッダー：画面上部の見出しエリア -->
+<header class="bg-primary text-white py-4 text-center">
+    <h1 class="display-5">TODOリスト管理</h1>      <!-- 大きめのタイトル -->
+</header>
+
+<!-- メインコンテンツ：TODO一覧の表示部分 -->
+<main class="container my-4">
+    <table class="table table-bordered table-hover">
+        <!-- テーブルのヘッダー部分 -->
+        <thead class="table-light">
+            <tr>
+                <th scope="col">✔️ 完了</th>       <!-- チェックボックス -->
+                <th scope="col">📅 予定日</th>     <!-- 日付 -->
+                <th scope="col">📝 内容</th>       <!-- タスク内容 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 仮データ（本番ではループ処理などで出力） -->
+            <tr>
+                <td><input type="checkbox" class="form-check-input" /></td>
+                <td>2025-08-01</td>
+                <td>デザイン修正の確認</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="form-check-input" /></td>
+                <td>2025-08-02</td>
+                <td>API連携のテスト</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<!-- フッター：操作ボタン（登録・編集・削除）を配置 -->
+<footer class="bg-light py-3 mt-auto">
+    <div class="container text-center">
+        <div class="btn-group" role="group">
+            <!-- 新規登録画面への遷移 -->
+            <a href="#" class="btn btn-success">＋ 登録</a>
+            <!-- 編集画面への遷移 -->
+            <a href="#" class="btn btn-warning">🛠 編集</a>
+            <!-- 削除画面への遷移 -->
+            <a href="#" class="btn btn-danger">🗑 削除</a>
+        </div>
+    </div>
+</footer>
+
