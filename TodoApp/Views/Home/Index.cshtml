@@ -21,17 +21,19 @@
             </tr>
         </thead>
         <tbody>
-            <!-- 仮データ（本番ではループ処理などで出力） -->
-            <tr>
-                <td><input type="checkbox" class="form-check-input" /></td>
-                <td>2025-08-01</td>
-                <td>デザイン修正の確認</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" class="form-check-input" /></td>
-                <td>2025-08-02</td>
-                <td>API連携のテスト</td>
-            </tr>
+            @foreach (var item in Model) // TODOリストの各項目を1行ずつ表示
+            {
+                <tr>
+                    <td>
+                        <!-- 完了チェックボックス：IsCompleted が true の場合はチェッ+ク済みにする -->
+                        <input type="checkbox" class="form-check-input" + @(item.IsCompleted ? "checked" : "") />
+                    </td>
+                    <!-- 予定日を yyyy-MM-dd 形式で表示 -->
+                    <td>@item.DueDate.ToString("yyyy-MM-dd")</td>
+                    <!-- TODOの説明文を表示 -->
+                    <td>@item.Description</td>
+                </tr>
+            }
         </tbody>
     </table>
 </main>
